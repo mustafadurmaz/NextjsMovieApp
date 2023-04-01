@@ -1,9 +1,22 @@
-import "./globals.css"
+import React from "react";
 
-export default function RootLayout({ children }) {
+import Providers from "./Providers";
+import Header from "./components/Header";
+import Tabs from "./components/Tabs";
+import "./globals.css";
+
+const Layout = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>
+          <Header />
+          <Tabs />
+          {children}
+        </Providers>
+      </body>
     </html>
-  )
-}
+  );
+};
+
+export default Layout;
