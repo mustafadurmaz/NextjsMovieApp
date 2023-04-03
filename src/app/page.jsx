@@ -1,9 +1,22 @@
 import React from "react";
 
-const Page = () => {
+import Movies from "./components/Movies";
+
+const Page = async ({ searchParams }) => {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/${
+      searchParams.genre ? "movie/" + searchParams.genre : "trending/all/day"
+    }?api_key=46a837ced1c1eedb6163fe2f9bc128f8`,
+    { next: { revalidate: 5 } },
+  );
+
+  const data = await res.json();
+
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      {data?.results.map((item, index) => (
+        <Movies key={index} item={item} />
+      ))}
     </div>
   );
 };
