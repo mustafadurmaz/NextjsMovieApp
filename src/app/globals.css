@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.imgContainer > *{
+    flex:1 1 auto
+}
+

@@ -11,11 +11,11 @@ const Tabs = () => {
   const tabs = [
     {
       name: "En Populer",
-      url: "populer",
+      url: "popular",
     },
     {
-      name: "En Son",
-      url: "latest",
+      name: "En Yüksek",
+      url: "top_rated",
     },
     {
       name: "Yakında Gelecekler",

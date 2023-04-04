@@ -13,8 +13,8 @@ const Page = async ({ searchParams }) => {
   const data = await res.json();
 
   return (
-    <div>
-      {data?.results.map((item, index) => (
+    <div className="flex items-center justify-center flex-wrap gap-3">
+      {data?.results?.map((item, index) => (
         <Movies key={index} item={item} />
       ))}
     </div>
